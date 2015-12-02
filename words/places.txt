@@ -1,0 +1,219 @@
+barn
+farmhouse
+shed
+granary
+greenhouse
+hayloft
+pigpen
+cellar
+silo
+stable
+forum
+gas station
+villa
+bungalow
+duplex
+condomnium
+archive
+college
+school
+theater
+cinema
+opera_house
+ampitheater
+capitol
+city_hall
+embassy
+fire_station
+meeting_house
+
+abbey
+adoption clinic
+airport
+alley
+farm
+outhouse
+bathroom
+bedroom
+graveyard
+cemetary
+college
+university
+swamp
+bog
+hill
+mountain
+resort
+beach
+forest
+skyscraper
+concert
+treehouse
+arena
+temple
+factory
+jail
+prison
+library
+dancehall
+discotheque
+farm
+pyramid
+animal research facility
+animal sanctuary
+animal shelter
+antique store
+aquarium
+art gallery
+art museum
+art studio
+artist colony
+attic
+auto junkyard
+bakery
+balcony
+barber shop
+baseball stadium
+basement
+beach
+beauty salon
+beaver dam
+blacksmith
+blood bank
+boat
+bookstore
+bootcamp
+botanical garden
+bridge
+buddhist temple
+cabin
+casino
+castle
+cat lady's house
+cathedral
+cave
+cemetary
+center for disease control laboratory
+cheap hotel
+cheese factory
+chinatown
+church
+circus
+city dump
+city street
+coal mine
+coffee house
+college dorm room
+comic book shop
+concert hall
+corporate board room
+courthouse
+dance studio
+day spa
+dump
+distillery
+dragon's lair
+emergency room
+estuary
+evil lair
+execution chamber
+fairground
+ferris wheel
+fire station
+fishing boat
+floating fish factory
+football stadium
+fort
+fortune teller's shop
+garbage dump
+garden
+golf course
+graveyard
+grocery store
+gymnasium
+gypsy camp
+hardware store
+highway rest stop
+hospital
+house
+haunted house
+ice cream shop
+igloo
+insectarium
+jazz club
+jewelry store
+judge's chambers
+karaoke bar
+karate studio
+landfill
+laundromat
+laboratory
+library
+lighthouse
+logging camp
+mannequin factory
+mansion
+mechanic's shop
+medical laboratory
+mississippi river barge
+mosque
+nightclub
+nuclear reactor
+nursing home
+observatory
+office
+office cubicle
+opera house
+optometrist
+orchestra pit
+palace
+park
+pet grooming salon
+pet store
+police station
+pottery studio
+principal's office
+priory
+prison
+racetrack
+radio station
+rainforest
+restaurant
+road
+roadside motel
+salt mine
+sanitarium
+school
+store
+second hand store
+secret hideaway
+sewer
+shack
+shopping mall
+small twon
+spider farm
+stable
+steam ship
+steel mill
+summer camp
+synagogue
+temple
+theater
+tower
+trailer park
+train graveyard
+train station
+travel agency
+treehouse
+unemployment office
+volleyball court
+voting booth
+warehouse
+waterslide park
+wax museum
+wildlife range
+windmill
+winery
+woods
+yoga class
+zoo
