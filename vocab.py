@@ -1,3 +1,8 @@
+""" Provides access to the word lists located in the words folder.
+"""
+
+__author__ = "Matt Fister"
+
 import random
 import os.path
 
@@ -8,7 +13,7 @@ living_things = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname
 celebs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'celebs.txt'))))]
 places = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'places.txt'))))]
 place_adjs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'placeAdjs.txt'))))]
-ogdenBasicNouns = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'ogdenBasicNouns.txt'))))]
+ogden_basic_nouns = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'ogdenBasicNouns.txt'))))]
 living_thing_adjs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'livingThingAdjs.txt'))))]
 fantasy_places = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'fantasyPlaces.txt'))))]
 fantasy_props = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'fantasyProps.txt'))))]
@@ -47,7 +52,7 @@ def get_fantasy_place():
 
 
 def get_ogden_basic_noun():
-    return random.choice(ogdenBasicNouns)
+    return random.choice(ogden_basic_nouns)
 
 
 def get_living_thing_adj():

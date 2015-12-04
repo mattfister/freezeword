@@ -1,6 +1,11 @@
-from vocab import WordLists
+"""
+Translates words to a nonsensical "ancient" language via simple letter replacement.
+Also can get a random nonsense noun.
+"""
 
-words = WordLists()
+__author__ = "Matt Fister"
+
+import vocab
 
 
 def translate_word(word):
@@ -18,7 +23,7 @@ def translate_word(word):
 
 
 def random_word():
-    return translate_word(words.get_noun())
+    return translate_word(vocab.get_noun())
 
 
 if __name__ == '__main__':

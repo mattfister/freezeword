@@ -1,5 +1,11 @@
-# Stolen from https://www.daniweb.com/programming/software-development/code/216839/number-to-word-converter-python
-# ...I think
+"""
+Stolen from https://www.daniweb.com/programming/software-development/code/216839/number-to-word-converter-python
+...I think
+
+Updated to run in python 3
+"""
+
+__author__ = "Matt Fister"
 
 
 def num_to_words(num,join=True):
@@ -15,7 +21,8 @@ def num_to_words(num,join=True):
                  'septendecillion','octodecillion','novemdecillion', \
                  'vigintillion']
     words = []
-    if num == 0: words.append('zero')
+    if num == 0:
+        words.append('zero')
     else:
         num_str = '%d' % num
         num_str_len = len(num_str)

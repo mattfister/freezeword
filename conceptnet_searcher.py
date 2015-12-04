@@ -1,7 +1,15 @@
+"""
+Provides access to a reduced, offline version of conceptnet. This uses a bunch of spliced up json files located
+in the conceptnetreduced folder. Each time a request is made, the correct file is opened and the relations to the
+concept are returned.
+"""
+
+__author__ = "Matt Fister"
+
 import json
 import os
 
-# The number of json files that conceptnet is split over
+# The number of json files that conceptnet has been split over
 num_parts = 50
 
 

@@ -1,5 +1,14 @@
+""" Returns a list of words that rhyme with the desired word.
+Uses cmudict from nltk.
+
+Rhyming is complicated and I haven't quite figured it out yet... :(
+
+But it sort of works.
+"""
+
+__author__ = "Matt Fister"
+
 import nltk
-import sys
 
 
 def rhyme(inp):
@@ -18,6 +27,5 @@ def rhyme(inp):
             filteredRhymes += [rhyme]
     return set(filteredRhymes)
 
-
 if __name__ == "__main__":
-    print(rhyme(sys.argv[1]))
+    print(rhyme("banana"))

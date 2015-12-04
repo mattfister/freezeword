@@ -1,9 +1,15 @@
-# This is from https://github.com/alexmic/microtemplates
-# Modified to evaluate until complete. In progress.
+"""
+ This is adapted from https://github.com/alexmic/microtemplates
+ Updated for python 3
+ Added iterative variable replacement, and choices for variable values
+"""
+
+__author__ = "Matt Fister"
 
 import re
 import operator
 import ast
+import random
 
 VAR_FRAGMENT = 0
 OPEN_BLOCK_FRAGMENT = 1
@@ -59,8 +65,11 @@ class TemplateSyntaxError(TemplateError):
 def eval_expression(expr):
     try:
         return 'literal', ast.literal_eval(expr)
-    except ValueError, SyntaxError:
+    except ValueError:
         return 'name', expr
+    except SyntaxError:
+        return 'name', expr
+
 
 
 def resolve(name, context):
@@ -207,7 +216,9 @@ class _Call(_Node):
             bits = WHITESPACE.split(fragment)
             self.callable = bits[1]
             self.args, self.kwargs = self._parse_params(bits[2:])
-        except ValueError, IndexError:
+        except ValueError:
+            raise TemplateSyntaxError(fragment)
+        except IndexError:
             raise TemplateSyntaxError(fragment)
 
     def _parse_params(self, params):
@@ -300,11 +311,19 @@ class Template(object):
         self.root = Compiler(contents).compile()
 
     def render(self, **kwargs):
+        new_kwargs = {}
+        for key, val in kwargs.items():
+            print(key + " " + val)
+            parts = val.split('|')
+            part_choice = random.choice(parts)
+            new_kwargs[key] = part_choice
         while VAR_TOKEN_START in self.contents:
-            self.contents = self.root.render(kwargs)
+            self.contents = self.root.render(new_kwargs)
             self.root = Compiler(self.contents).compile()
         return self.contents
 
-if __name__=='__main__':
-    context = {'world' : '{{adjective}} world', 'adjective' : 'sad'}
-    print Template("hello {{world}}").render(**context)
+if __name__ == '__main__':
+    context = {'greeting': 'bonjour|hello|sup', 'world': '{{adjective}} world',
+               'adjective': '{{sad word}}|{{happy word}}',
+               'sad word': 'crappy|sad', 'happy word': 'joyful|crazy|wonderful'}
+    print(Template("{{greeting}} {{world}}").render(**context))
