@@ -1,10 +1,10 @@
 """ Provides access to the word lists located in the words folder.
 """
 
-__author__ = "Matt Fister"
-
 import random
 import os.path
+
+__author__ = "Matt Fister"
 
 adjs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'a.txt'))))]
 nouns = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'n.txt'))))]

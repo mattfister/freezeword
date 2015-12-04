@@ -6,9 +6,9 @@ Rhyming is complicated and I haven't quite figured it out yet... :(
 But it sort of works.
 """
 
-__author__ = "Matt Fister"
-
 import nltk
+
+__author__ = "Matt Fister"
 
 
 def rhyme(inp):

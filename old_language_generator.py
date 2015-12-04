@@ -3,9 +3,9 @@ Translates words to a nonsensical "ancient" language via simple letter replaceme
 Also can get a random nonsense noun.
 """
 
-__author__ = "Matt Fister"
-
 import vocab
+
+__author__ = "Matt Fister"
 
 
 def translate_word(word):

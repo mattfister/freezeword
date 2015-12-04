@@ -5,19 +5,17 @@
  Removed calls, ifs, and lists
 """
 
-__author__ = "Matt Fister"
-
 import re
-import operator
 import ast
 import random
+
+__author__ = "Matt Fister"
 
 VAR_FRAGMENT = 0
 TEXT_FRAGMENT = 2
 
 VAR_TOKEN_START = '{{'
 VAR_TOKEN_END = '}}'
-
 
 TOK_REGEX = re.compile(r"(%s.*?%s)" % (
     VAR_TOKEN_START,
