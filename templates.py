@@ -1,7 +1,8 @@
 """
  This is adapted from https://github.com/alexmic/microtemplates
  Updated for python 3
- Added iterative variable replacement, and choices for variable values
+ Added iterative variable replacement, and choices for variable values.
+ Removed calls, ifs, and lists
 """
 
 __author__ = "Matt Fister"
@@ -12,32 +13,18 @@ import ast
 import random
 
 VAR_FRAGMENT = 0
-OPEN_BLOCK_FRAGMENT = 1
-CLOSE_BLOCK_FRAGMENT = 2
-TEXT_FRAGMENT = 3
+TEXT_FRAGMENT = 2
 
 VAR_TOKEN_START = '{{'
 VAR_TOKEN_END = '}}'
-BLOCK_TOKEN_START = '{%'
-BLOCK_TOKEN_END = '%}'
 
-TOK_REGEX = re.compile(r"(%s.*?%s|%s.*?%s)" % (
+
+TOK_REGEX = re.compile(r"(%s.*?%s)" % (
     VAR_TOKEN_START,
     VAR_TOKEN_END,
-    BLOCK_TOKEN_START,
-    BLOCK_TOKEN_END
 ))
 
 WHITESPACE = re.compile('\s+')
-
-operator_lookup_table = {
-    '<': operator.lt,
-    '>': operator.gt,
-    '==': operator.eq,
-    '!=': operator.ne,
-    '<=': operator.le,
-    '>=': operator.ge
-}
 
 
 class TemplateError(Exception):
@@ -71,7 +58,6 @@ def eval_expression(expr):
         return 'name', expr
 
 
-
 def resolve(name, context):
     if name.startswith('..'):
         context = context.get('..', {})
@@ -90,7 +76,7 @@ class _Fragment(object):
         self.clean = self.clean_fragment()
 
     def clean_fragment(self):
-        if self.raw[:2] in (VAR_TOKEN_START, BLOCK_TOKEN_START):
+        if self.raw[:2] in (VAR_TOKEN_START):
             return self.raw.strip()[2:-2].strip()
         return self.raw
 
@@ -99,8 +85,6 @@ class _Fragment(object):
         raw_start = self.raw[:2]
         if raw_start == VAR_TOKEN_START:
             return VAR_FRAGMENT
-        elif raw_start == BLOCK_TOKEN_START:
-            return CLOSE_BLOCK_FRAGMENT if self.clean[:3] == 'end' else OPEN_BLOCK_FRAGMENT
         else:
             return TEXT_FRAGMENT
 
@@ -136,6 +120,7 @@ class _Node(object):
 class _ScopableNode(_Node):
     creates_scope = True
 
+
 class _Root(_Node):
     def render(self, context):
         return self.render_children(context)
@@ -147,105 +132,6 @@ class _Variable(_Node):
 
     def render(self, context):
         return resolve(self.name, context)
-
-
-class _Each(_ScopableNode):
-    def process_fragment(self, fragment):
-        try:
-            _, it = WHITESPACE.split(fragment, 1)
-            self.it = eval_expression(it)
-        except ValueError:
-            raise TemplateSyntaxError(fragment)
-
-    def render(self, context):
-        items = self.it[1] if self.it[0] == 'literal' else resolve(self.it[1], context)
-        def render_item(item):
-            return self.render_children({'..': context, 'it': item})
-        return ''.join(map(render_item, items))
-
-
-class _If(_ScopableNode):
-    def process_fragment(self, fragment):
-        bits = fragment.split()[1:]
-        if len(bits) not in (1, 3):
-            raise TemplateSyntaxError(fragment)
-        self.lhs = eval_expression(bits[0])
-        if len(bits) == 3:
-            self.op = bits[1]
-            self.rhs = eval_expression(bits[2])
-
-    def render(self, context):
-        lhs = self.resolve_side(self.lhs, context)
-        if hasattr(self, 'op'):
-            op = operator_lookup_table.get(self.op)
-            if op is None:
-                raise TemplateSyntaxError(self.op)
-            rhs = self.resolve_side(self.rhs, context)
-            exec_if_branch = op(lhs, rhs)
-        else:
-            exec_if_branch = operator.truth(lhs)
-        if_branch, else_branch = self.split_children()
-        return self.render_children(context,
-            self.if_branch if exec_if_branch else self.else_branch)
-
-    def resolve_side(self, side, context):
-        return side[1] if side[0] == 'literal' else resolve(side[1], context)
-
-    def exit_scope(self):
-        self.if_branch, self.else_branch = self.split_children()
-
-    def split_children(self):
-        if_branch, else_branch = [], []
-        curr = if_branch
-        for child in self.children:
-            if isinstance(child, _Else):
-                curr = else_branch
-                continue
-            curr.append(child)
-        return if_branch, else_branch
-
-
-class _Else(_Node):
-    def render(self, context):
-        pass
-
-
-class _Call(_Node):
-    def process_fragment(self, fragment):
-        try:
-            bits = WHITESPACE.split(fragment)
-            self.callable = bits[1]
-            self.args, self.kwargs = self._parse_params(bits[2:])
-        except ValueError:
-            raise TemplateSyntaxError(fragment)
-        except IndexError:
-            raise TemplateSyntaxError(fragment)
-
-    def _parse_params(self, params):
-        args, kwargs = [], {}
-        for param in params:
-            if '=' in param:
-                name, value = param.split('=')
-                kwargs[name] = eval_expression(value)
-            else:
-                args.append(eval_expression(param))
-        return args, kwargs
-
-    def render(self, context):
-        resolved_args, resolved_kwargs = [], {}
-        for kind, value in self.args:
-            if kind == 'name':
-                value = resolve(value, context)
-            resolved_args.append(value)
-        for key, (kind, value) in self.kwargs.iteritems():
-            if kind == 'name':
-                value = resolve(value, context)
-            resolved_kwargs[key] = value
-        resolved_callable = resolve(self.callable, context)
-        if hasattr(resolved_callable, '__call__'):
-            return resolved_callable(*resolved_args, **resolved_kwargs)
-        else:
-            raise TemplateError("'%s' is not a callable" % self.callable)
 
 
 class _Text(_Node):
@@ -272,10 +158,6 @@ class Compiler(object):
             if not scope_stack:
                 raise TemplateError('nesting issues')
             parent_scope = scope_stack[-1]
-            if fragment.type == CLOSE_BLOCK_FRAGMENT:
-                parent_scope.exit_scope()
-                scope_stack.pop()
-                continue
             new_node = self.create_node(fragment)
             if new_node:
                 parent_scope.children.append(new_node)
@@ -290,16 +172,6 @@ class Compiler(object):
             node_class = _Text
         elif fragment.type == VAR_FRAGMENT:
             node_class = _Variable
-        elif fragment.type == OPEN_BLOCK_FRAGMENT:
-            cmd = fragment.clean.split()[0]
-            if cmd == 'each':
-                node_class = _Each
-            elif cmd == 'if':
-                node_class = _If
-            elif cmd == 'else':
-                node_class = _Else
-            elif cmd == 'call':
-                node_class = _Call
         if node_class is None:
             raise TemplateSyntaxError(fragment)
         return node_class(fragment.clean)
