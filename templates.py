@@ -313,17 +313,22 @@ class Template(object):
     def render(self, **kwargs):
         new_kwargs = {}
         for key, val in kwargs.items():
-            print(key + " " + val)
-            parts = val.split('|')
-            part_choice = random.choice(parts)
-            new_kwargs[key] = part_choice
+            if isinstance(val, (str)):
+                print(key + " " + val)
+                parts = val.split('|')
+                part_choice = random.choice(parts)
+                new_kwargs[key] = part_choice
+            else:
+                print(key + " " + str(val))
+                part_choice = random.choice(val)
+                new_kwargs[key] = part_choice
         while VAR_TOKEN_START in self.contents:
             self.contents = self.root.render(new_kwargs)
             self.root = Compiler(self.contents).compile()
         return self.contents
 
 if __name__ == '__main__':
-    context = {'greeting': 'bonjour|hello|sup', 'world': '{{adjective}} world',
+    context = {'greeting': ['bonjour'.title(), 'hello'.title(), 'yo'.title()], 'world': '{{adjective}} world',
                'adjective': '{{sad word}}|{{happy word}}',
                'sad word': 'crappy|sad', 'happy word': 'joyful|crazy|wonderful'}
     print(Template("{{greeting}} {{world}}").render(**context))
