@@ -2,11 +2,12 @@
 Utility to write out work to markdown. Uses pypandoc to conver the markdown to html when complete.
 """
 
-__author__ = "Matt Fister"
-
 import time
 import os.path
 import pypandoc
+
+__author__ = "Matt Fister"
+
 
 name = str(int(time.time()))
 md_name = name + '.md'

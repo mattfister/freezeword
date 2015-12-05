@@ -2,10 +2,10 @@
 Simple utility to get random names. I think it uses data from a US census, located in the words folder.
 """
 
-__author__ = "Matt Fister"
-
 import random
 import os.path
+
+__author__ = "Matt Fister"
 
 maleFirsts = [line.rstrip('\n').title() for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'maleFirstNames.txt'))))]
 femaleFirsts = [line.rstrip('\n').title() for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'femaleFirstNames.txt'))))]
