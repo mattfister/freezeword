@@ -22,54 +22,68 @@ The method in concept_net_searcher called get_concept_relations returns a list o
 
 ### names
 **Overview**
+
 Simple utility to get random names. Names are US Centric since they are based on census data.
 
 **Usage**
->>> print(names.get_name('female'))
-Jeana Gilliam
+
+    print(names.get_name('female'))
+    Jeana Gilliam
 
 ### num_to_words
 **Overview**
+
 Converts numbers to their spelled out English description.
 
 **Usage**
->>> print(num_to_words.num_to_words(53270))
-fifty three thousand, two hundred seventy
+
+    print(num_to_words.num_to_words(53270))
+    fifty three thousand, two hundred seventy
 
 ### old_language_generator
 **Overview**
+
 Translates words to a nonsensical "ancient" language via letter replacement.
 
 **Usage**
->>> print(old_language_generator.translate_word("Hello world"))
-Hahhu iaufhl
+
+    print(old_language_generator.translate_word("Hello world"))
+    Hahhu iaufhl
 
 ### rhymes
 **TODO**
 
 ### templates
 **Overview**
+
 A templating library for resolving sentence templates. Iteratively processes until all recursive variable substitution is evaluated.
-*Syntax*
-Variables are represented by {{variable name}}. Random choices can be provided to variables either as lists or strings separated by the | symbol. One of the choices will be selected for evaluation.
 
 **Usage**
->>> context = {'greeting': ['bonjour'.title(), 'hello'.title(), 'yo'.title()], 'world': '{{adjective}} world',
+
+*Syntax*
+
+Variables are represented by {{variable name}}. Random choices can be provided to variables either as lists or strings separated by the | symbol. One of the choices will be selected for evaluation.
+
+*Example*
+
+    context = {'greeting': ['bonjour'.title(), 'hello'.title(), 'yo'.title()], 'world': '{{adjective}} world',
                'adjective': '{{sad word}}|{{happy word}}',
                'sad word': 'crappy|sad', 'happy word': 'joyful|crazy|wonderful'}
->>> print(Template("{{greeting}} {{world}}").render(**context))
-Hello crazy world
->>> print(Template("{{greeting}} {{world}}").render(**context))
-Bonjour sad world
+    print(Template("{{greeting}} {{world}}").render(**context))
+    Hello crazy world
+    print(Template("{{greeting}} {{world}}").render(**context))
+    Bonjour sad world
 
 
 ### vocab
 **Overview**
+
 Provides access to the word lists located in the words folder.
 
 **Usage**
->>> print(vocab.get_living_thing())
-pioneer
+
+    print(vocab.get_living_thing())
+    pioneer
 
 ### word_tests
 **TODO**
