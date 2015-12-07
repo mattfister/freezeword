@@ -14,13 +14,64 @@ In terms of underlying structure, the flattened concept data from conceptnet was
 
 The method in concept_net_searcher called get_concept_relations returns a list of all relations concept pairs for the provided concept.
 
-    from wordtools import conceptnet_searcher
-    print(conceptnet_searcher.get_concept_relations('avocado'))
+>>> print(conceptnet_searcher.get_concept_relations('avocado'))
+[[u'HasA', u'skin'], [u'IsA', u'fruit'], [u'InstanceOf', u'specie'], [u'MemberOf', u'persea'], [u'HasProperty',     u'use_for_salad'], [u'InstanceOf', u'eukaryote'], [u'IsA', u'live_thing'], [u'IsA', u'oily_green_fruit'], [u'IsA', u'edible_fruit'], [u'RelatedTo', u'california_roll'], [u'RelatedTo', u'guacamole'], [u'RelatedTo', u'yellowish'], [u'RelatedTo', u'fruit'], [u'InstanceOf', u'plant'], [u'RelatedTo', u'green'], [u'Synonym', u'butter_pear'], [u'HasProperty', u'very_popular_in_vegetarian_cuisine'], [u'RelatedTo', u'green'], [u'RelatedTo', u'yellowish'], [u'HasA', u'more_protein_than_any_other_fruit'], [u'IsA', u'fruit_tree'], [u'PartOf', u'avocado'], [u'RelatedTo', u'laurel'], [u'RelatedTo', u'tree'], [u'IsA', u'greenery'], [u'PartOf', u'skin'], [u'RelatedTo', u'colour'], [u'Synonym', u'alligator_pear']]
 
->[[u'HasA', u'skin'], [u'IsA', u'fruit'], [u'InstanceOf', u'specie'], [u'MemberOf', u'persea'], [u'HasProperty',     u'use_for_salad'], [u'InstanceOf', u'eukaryote'], [u'IsA', u'live_thing'], [u'IsA', u'oily_green_fruit'], [u'IsA', u'edible_fruit'], [u'RelatedTo', u'california_roll'], [u'RelatedTo', u'guacamole'], [u'RelatedTo', u'yellowish'], [u'RelatedTo', u'fruit'], [u'InstanceOf', u'plant'], [u'RelatedTo', u'green'], [u'Synonym', u'butter_pear'], [u'HasProperty', u'very_popular_in_vegetarian_cuisine'], [u'RelatedTo', u'green'], [u'RelatedTo', u'yellowish'], [u'HasA', u'more_protein_than_any_other_fruit'], [u'IsA', u'fruit_tree'], [u'PartOf', u'avocado'], [u'RelatedTo', u'laurel'], [u'RelatedTo', u'tree'], [u'IsA', u'greenery'], [u'PartOf', u'skin'], [u'RelatedTo', u'colour'], [u'Synonym', u'alligator_pear']]
-
-### vocab
+### md_writer
 **TODO**
+
+### names
+**Overview**
+Simple utility to get random names. Names are US Centric since they are based on census data.
+
+**Usage**
+>>> print(names.get_name('female'))
+Jeana Gilliam
+
+### num_to_words
+**Overview**
+Converts numbers to their spelled out English description.
+
+**Usage**
+>>> print(num_to_words.num_to_words(53270))
+fifty three thousand, two hundred seventy
+
+### old_language_generator
+**Overview**
+Translates words to a nonsensical "ancient" language via letter replacement.
+
+**Usage**
+>>> print(old_language_generator.translate_word("Hello world"))
+Hahhu iaufhl
+
 ### rhymes
 **TODO**
+
+### templates
+**Overview**
+A templating library for resolving sentence templates. Iteratively processes until all recursive variable substitution is evaluated.
+*Syntax*
+Variables are represented by {{variable name}}. Random choices can be provided to variables either as lists or strings separated by the | symbol. One of the choices will be selected for evaluation.
+
+**Usage**
+>>> context = {'greeting': ['bonjour'.title(), 'hello'.title(), 'yo'.title()], 'world': '{{adjective}} world',
+               'adjective': '{{sad word}}|{{happy word}}',
+               'sad word': 'crappy|sad', 'happy word': 'joyful|crazy|wonderful'}
+>>> print(Template("{{greeting}} {{world}}").render(**context))
+Hello crazy world
+>>> print(Template("{{greeting}} {{world}}").render(**context))
+Bonjour sad world
+
+
+### vocab
+**Overview**
+Provides access to the word lists located in the words folder.
+
+**Usage**
+>>> print(vocab.get_living_thing())
+pioneer
+
+### word_tests
+**TODO**
+
 
