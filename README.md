@@ -1,4 +1,6 @@
 # freezeword
+![freezeword logo](http://freezebeam.com/wp-content/uploads/2015/12/Drawing.png)
+
 This package contains some utility classes for various linguistic tasks. There are some vocabulary lists in the words folder. These can be accessed via vocab or names. It also contains a reduced version of conceptnet that can be searched based on JSON representation located in the conceptnetreduced folder.
 
 ## Components
@@ -117,3 +119,6 @@ pioneer
 **TODO**
 
 
+###
+Credits:
+Ice graphic by <a href="http://www.freepik.com/">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
