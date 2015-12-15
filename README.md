@@ -3,6 +3,8 @@
 
 This package contains some utility classes for various linguistic tasks. There are some vocabulary lists in the words folder. These can be accessed via vocab or names. It also contains a reduced version of conceptnet that can be searched based on JSON representation located in the conceptnetreduced folder.
 
+---
+
 ## Components
 
 ### conceptnet_reduced
@@ -31,8 +33,12 @@ print(conceptnet_searcher.get_concept_relations('avocado'))
 [u'RelatedTo', u'colour'], [u'Synonym', u'alligator_pear']]
 ```
 
+---
+
 ### md_writer
 **TODO**
+
+---
 
 ### names
 **Overview**
@@ -47,6 +53,8 @@ print(names.get_name('female'))
 Jeana Gilliam
 ```
 
+---
+
 ### num_to_words
 **Overview**
 
@@ -59,6 +67,8 @@ print(num_to_words.num_to_words(53270))
 
 fifty three thousand, two hundred seventy
 ```
+
+---
 
 ### old_language_generator
 **Overview**
@@ -73,8 +83,12 @@ print(old_language_generator.translate_word("Hello world"))
 Hahhu iaufhl
 ````
 
+---
+
 ### rhymes
 **TODO**
+
+---
 
 ### templates
 **Overview**
@@ -102,6 +116,8 @@ print(Template("{{greeting}} {{world}}").render(**context))
 Bonjour sad world
 ```
 
+---
+
 ### vocab
 **Overview**
 
@@ -115,10 +131,15 @@ print(vocab.get_living_thing())
 pioneer
 ```
 
+---
+
 ### word_tests
 **TODO**
 
+---
 
 ###
 Credits:
 Ice graphic by <a href="http://www.freepik.com/">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
+
+---
