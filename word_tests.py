@@ -39,16 +39,17 @@ def is_one_of(word, synsets):
             return True
     return False
 
+
 def is_place(word):
     place_synsets = ['area.n.05', 'structure.n.01', 'geological_formation.n.01', 'region.n.03',
                      'location.n.01']
     return is_one_of(word, place_synsets)
 
+
+def is_person(word):
+    person_synsets = ['person.n.01']
+    return is_one_of(word, person_synsets)
+
+
 if __name__ == '__main__':
-    print(all_hypernyms('disco'))
-    print(is_place('disco'))
-    print(is_place('avocado'))
-    print(all_hypernyms('cemetery'))
-    print(is_place('cemetery'))
-    print(all_hypernyms('mountain'))
-    print(is_place('mountain'))
+    print(is_person('aunt'))
