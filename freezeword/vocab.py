@@ -16,6 +16,7 @@ place_adjs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__
 ogden_basic_nouns = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'ogdenBasicNouns.txt'))))]
 living_thing_adjs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'livingThingAdjs.txt'))))]
 fantasy_places = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'fantasyPlaces.txt'))))]
+ruin_rooms = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'ruinRooms.txt'))))]
 fantasy_props = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'fantasyProps.txt'))))]
 fantasy_races = ['elf', 'orc', 'dwarf', 'golem', 'kobold', 'gnome']
 fantasy_occupations = ['traders', 'soldiers', 'miners', 'settlers', 'wizards']
@@ -78,6 +79,9 @@ def get_positive_quality():
 def get_negative_quality():
     return random.choice(negative_qualities)
 
+def get_ruin_room():
+    return random.choice(ruin_rooms)
+
 
 if __name__ == "__main__":
     print(get_noun())
@@ -85,3 +89,4 @@ if __name__ == "__main__":
     print(get_celeb())
     print(get_living_thing())
     print(get_place())
+    print(get_ruin_room())

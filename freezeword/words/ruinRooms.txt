@@ -1,0 +1,137 @@
+dormitory
+hall
+bedroom
+library
+storeroom
+forge
+chapel
+bath
+summoning room
+jail
+kitchen
+shrine
+courthall
+cave
+tube
+hallway
+portico
+foyer
+study
+laboratory
+cistern
+stables
+latrines
+observatory
+wine cellar
+nursery
+pantry
+larder
+latrine
+garden
+guard post
+throne room
+temple
+barracks
+pool
+well
+storage
+meditation room
+amphitheater
+antechamber
+asylum
+atrium
+battlement
+belfry
+cave
+cavern
+chapel
+cloister
+coliseum
+courtyard
+depository
+foyer
+gallery
+garden
+greenhouse
+hideaway
+hold
+infirmary
+keep
+kitchen
+laboratory
+labrynth
+library
+minaret
+mine
+necropolis
+nursery
+observatory
+office
+ossuary
+oubliette
+pantry
+park
+passageway
+prison
+rampart
+repository
+room
+sanctum
+sepulcher
+spire
+stairwell
+steeple
+storage room
+study
+sunroom
+temple
+threshold
+tower
+tunnel
+turret
+vault
+vestibule
+walkway
+privy
+ballroom
+great hall
+cloister
+training hall
+courtyard
+gallery
+trophy hall
+propylaeum
+conservatory
+kennel
+larder
+crematorium
+ossuary
+panopticon
+tomb
+crypt
+workshop
+foundry
+shrine
+infirmary
+meeting hall
+office
+parlor
+sitting Room
+anteroom
+foyer
+antechamber
+entrance hall
+atrium
+music hall
+theater
+wardroom
+closet
+war Room
+bedchamber
+cloakroom
+dressing room
+studio
+linen room
+boudoir
+refectory
+sewing room
