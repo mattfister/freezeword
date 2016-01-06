@@ -1,5 +1,5 @@
 """
-Utility to write out work to markdown. Uses pypandoc to conver the markdown to html when complete.
+Utility to write out work to markdown. Uses pypandoc to convert the markdown to html when complete.
 """
 
 import time
