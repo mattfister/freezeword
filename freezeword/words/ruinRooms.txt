@@ -1,0 +1,20 @@
+dormitory
+hall
+bedroom
+library
+storeroom
+forge
+chapel
+bath
+summoning room
+jail
+kitchen
+shrine
+courthall
+cave
+tube
+hallway
+portico
+foyer
+study
+laboratory
