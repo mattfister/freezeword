@@ -17,7 +17,6 @@ book
 boot
 bottle
 box
-boy
 brain
 brake
 branch
@@ -45,7 +44,6 @@ dog
 door
 drawer
 dress
-drop
 egg
 eye
 face
@@ -126,11 +124,6 @@ spirit
 goblin
 leprechaun
 hare
-dryad
-seer
-elf
-dwarf
-kobold
 salamander
 sword
 dagger

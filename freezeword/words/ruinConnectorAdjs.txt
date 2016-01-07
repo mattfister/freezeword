@@ -1,0 +1,10 @@
+narrow
+twisted
+small
+long
+windy
+dripping
+flooded
+hazy
+dark
+torchlit

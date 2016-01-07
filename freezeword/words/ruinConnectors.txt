@@ -1,0 +1,13 @@
+passageway
+hallway
+opening
+cave
+cavern
+corridor
+artery
+walkway
+hall
+path
+pathway
+threshold
+gap

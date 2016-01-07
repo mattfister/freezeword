@@ -17,6 +17,8 @@ ogden_basic_nouns = [line.rstrip('\n') for line in open(os.path.join(os.path.dir
 living_thing_adjs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'livingThingAdjs.txt'))))]
 fantasy_places = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'fantasyPlaces.txt'))))]
 ruin_rooms = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'ruinRooms.txt'))))]
+ruin_connectors = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'ruinConnectors.txt'))))]
+ruin_connector_adjs = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'ruinConnectorAdjs.txt'))))]
 fantasy_props = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'fantasyProps.txt'))))]
 fantasy_races = ['elf', 'orc', 'dwarf', 'golem', 'kobold', 'gnome']
 fantasy_occupations = ['traders', 'soldiers', 'miners', 'settlers', 'wizards']
@@ -79,9 +81,17 @@ def get_positive_quality():
 def get_negative_quality():
     return random.choice(negative_qualities)
 
+
 def get_ruin_room():
     return random.choice(ruin_rooms)
 
+
+def get_ruin_connector():
+    return random.choice(ruin_connectors)
+
+
+def get_ruin_connector_adj():
+    return random.choice(ruin_connector_adjs)
 
 if __name__ == "__main__":
     print(get_noun())

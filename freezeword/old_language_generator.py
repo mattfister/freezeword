@@ -3,7 +3,7 @@ Translates words to a nonsensical "ancient" language via simple letter replaceme
 Also can get a random nonsense noun.
 """
 
-import vocab
+from freezeword import vocab
 
 __author__ = "Matt Fister"
 

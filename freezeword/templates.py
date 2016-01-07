@@ -184,12 +184,10 @@ class Template(object):
         new_kwargs = {}
         for key, val in kwargs.items():
             if isinstance(val, (str)):
-                print(key + " " + val)
                 parts = val.split('|')
                 part_choice = random.choice(parts)
                 new_kwargs[key] = part_choice
             else:
-                print(key + " " + str(val))
                 part_choice = random.choice(val)
                 new_kwargs[key] = part_choice
         while VAR_TOKEN_START in self.contents:

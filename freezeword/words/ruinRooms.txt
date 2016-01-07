@@ -59,7 +59,7 @@ infirmary
 keep
 kitchen
 laboratory
-labrynth
+labyrinth
 library
 minaret
 mine
