@@ -23,7 +23,14 @@ def print_title(s):
     print('%'+s+'\n')
     global word_count
     word_count += len(s.split(" "))
-    out_file.write('%'+s+'\n')
+    out_file.write('%'+s+'\n\n')
+
+
+def print_sub_title(s):
+    print('#'+s+'\n')
+    global word_count
+    word_count += len(s.split(" "))
+    out_file.write('#'+s+'\n')
 
 
 def print_chapter_heading(s):
@@ -33,12 +40,29 @@ def print_chapter_heading(s):
     out_file.write('##'+s+'\n')
 
 
+def print_chapter_subheading(s):
+    print('###'+s+'\n')
+    global word_count
+    word_count += len(s.split(" "))
+    out_file.write('###'+s+'\n')
+
+
 def print_chapter_sentence(s):
     print(s + ' ')
     global word_count
     word_count += len(s.split(" "))
     try:
         out_file.write(s + ' ')
+    except UnicodeEncodeError:
+        pass
+
+
+def print_list_item(s):
+    print('* ' + s)
+    global word_count
+    word_count += len(s.split(" "))
+    try:
+        out_file.write("* " + s)
     except UnicodeEncodeError:
         pass
 
