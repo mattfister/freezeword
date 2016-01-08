@@ -8,6 +8,7 @@
 import re
 import ast
 import random
+from freezeword import a_or_an
 
 __author__ = "Matt Fister"
 
@@ -24,6 +25,7 @@ TOK_REGEX = re.compile(r"(%s.*?%s)" % (
 
 WHITESPACE = re.compile('\s+')
 
+A_OR_AN_TOK = "a_or_an"
 
 class TemplateError(Exception):
     pass
@@ -193,7 +195,17 @@ class Template(object):
         while VAR_TOKEN_START in self.contents:
             self.contents = self.root.render(new_kwargs)
             self.root = Compiler(self.contents).compile()
-        return self.contents
+        tokens = self.contents.split(" ")
+        prev_token = None
+        return_sentence = ""
+        for token in tokens:
+            if prev_token == A_OR_AN_TOK:
+                prev_token = a_or_an.a_or_an(token)
+            if prev_token is not None:
+                return_sentence += prev_token + " "
+            prev_token = token
+        return_sentence += token
+        return return_sentence
 
 if __name__ == '__main__':
     context = {'greeting': ['bonjour'.title(), 'hello'.title(), 'yo'.title()], 'world': '{{adjective}} world',

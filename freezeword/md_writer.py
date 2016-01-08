@@ -9,7 +9,8 @@ import pypandoc
 __author__ = "Matt Fister"
 
 
-name = str(int(time.time()))
+#name = str(int(time.time()))
+name = 'out'
 md_name = name + '.md'
 html_name = name + '.html'
 md_file_path = os.path.join('output', md_name)
