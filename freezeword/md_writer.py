@@ -28,24 +28,24 @@ def print_title(s):
 
 
 def print_sub_title(s):
-    print('#'+s+'\n')
-    global word_count
-    word_count += len(s.split(" "))
-    out_file.write('#'+s+'\n')
-
-
-def print_chapter_heading(s):
     print('##'+s+'\n')
     global word_count
     word_count += len(s.split(" "))
     out_file.write('##'+s+'\n')
 
 
-def print_chapter_subheading(s):
+def print_chapter_heading(s):
     print('###'+s+'\n')
     global word_count
     word_count += len(s.split(" "))
     out_file.write('###'+s+'\n')
+
+
+def print_chapter_subheading(s):
+    print('####'+s+'\n')
+    global word_count
+    word_count += len(s.split(" "))
+    out_file.write('####'+s+'\n')
 
 
 def print_chapter_sentence(s):
