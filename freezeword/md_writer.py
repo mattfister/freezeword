@@ -87,9 +87,12 @@ def end_paragraph():
 def end_chapter():
     out_file.write('\n\n')
 
-
 def phrase_as_link(phrase):
     ret_phrase = "["+phrase+"]"+"(#"+phrase.replace(" ", "-")+")"
+    return ret_phrase
+
+def phrase_with_anchor(phrase):
+    ret_phrase = '<a name="' + phrase.replace(" ", "-") + '"></a>'+phrase
     return ret_phrase
 
 # To add css call like css='https://mattfister.github.io/nanogenmo2015/samples/base.css'
