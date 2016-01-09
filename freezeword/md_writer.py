@@ -69,11 +69,13 @@ def print_list_item(s):
 
 
 def print_quote_line(s):
-    print('> ' + s+'\n\n')
+    print('> ' + s+'\n')
+    print(">\n")
     global word_count
     word_count += len(s.split(" "))
     try:
-        out_file.write("> " + s + '\n\n')
+        out_file.write("> " + s + '\n')
+        out_file.write(">\n")
     except UnicodeEncodeError:
         pass
 
