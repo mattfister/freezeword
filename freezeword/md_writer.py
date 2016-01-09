@@ -88,6 +88,10 @@ def end_chapter():
     out_file.write('\n\n')
 
 
+def phrase_as_link(phrase):
+    ret_phrase = "["+phrase+"]"+"(#"+phrase.replace(" ", "-")+")"
+    return ret_phrase
+
 # To add css call like css='https://mattfister.github.io/nanogenmo2015/samples/base.css'
 def end_novel(css=None):
     out_file.close()

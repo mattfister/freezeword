@@ -26,6 +26,7 @@ TOK_REGEX = re.compile(r"(%s.*?%s)" % (
 WHITESPACE = re.compile('\s+')
 
 A_OR_AN_TOK = "a_or_an"
+A_OR_AN_CAP_TOKEN = "A_or_an"
 
 class TemplateError(Exception):
     pass
@@ -201,6 +202,8 @@ class Template(object):
         for token in tokens:
             if prev_token == A_OR_AN_TOK:
                 prev_token = a_or_an.a_or_an(token)
+            if prev_token == A_OR_AN_CAP_TOKEN:
+                prev_token = a_or_an.a_or_an(token).title()
             if prev_token is not None:
                 return_sentence += prev_token + " "
             prev_token = token
