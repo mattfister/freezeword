@@ -21,10 +21,9 @@ def rhyme(inp):
             if pron[-2:] == syllable[-2:]:
                 rhymes += [word2]
     filteredRhymes = []
-    for rhyme in rhymes:
-        if len(nltk.corpus.wordnet.synsets(rhyme)) > 0 \
-                and not rhyme in inp and not inp in rhyme:
-            filteredRhymes += [rhyme]
+    for rhyme_word in rhymes:
+        if len(nltk.corpus.wordnet.synsets(rhyme_word)) > 0 and inp != rhyme_word:
+            filteredRhymes += [rhyme_word]
     return set(filteredRhymes)
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@
 
 import random
 import os.path
+from freezeword import rhymes
 
 __author__ = "Matt Fister"
 
@@ -93,6 +94,24 @@ def get_ruin_connector():
 def get_ruin_connector_adj():
     return random.choice(ruin_connector_adjs)
 
+
+def rhyming_adjs(word):
+    all_rhymes = rhymes.rhyme(word)
+    rhyming_adjs = []
+    for rhyme in all_rhymes:
+        if rhyme in adjs:
+            rhyming_adjs.append(rhyme)
+    return rhyming_adjs
+
+
+def rhyming_nouns(word):
+    all_rhymes = rhymes.rhyme(word)
+    rhyming_nouns = []
+    for rhyme in all_rhymes:
+        if rhyme in nouns:
+            rhyming_nouns.append(rhyme)
+    return rhyming_nouns
+
 if __name__ == "__main__":
     print(get_noun())
     print(get_adj())
@@ -100,3 +119,6 @@ if __name__ == "__main__":
     print(get_living_thing())
     print(get_place())
     print(get_ruin_room())
+    print(rhyming_adjs('shot'))
+    print(rhyming_nouns('truth'))
+
