@@ -14,11 +14,14 @@ __author__ = "Matt Fister"
 def rhyme(inp):
     entries = nltk.corpus.cmudict.entries()
     syllables = [(word, syl) for word, syl in entries if word == inp]
-    minlength = len(syllables)
+    stress_index = 0
+    for i, syllable in enumerate(syllables[0][1]):
+        if '1' in syllable:
+            stress_index = len(syllables[0][1])-i
     rhymes = []
     for (word, syllable) in syllables:
         for word2, pron in entries:
-            if pron[-2:] == syllable[-2:]:
+            if pron[-stress_index:] == syllable[-stress_index:]:
                 rhymes += [word2]
     filteredRhymes = []
     for rhyme_word in rhymes:
