@@ -1,9 +1,7 @@
 """ Returns a list of words that rhyme with the desired word.
 Uses cmudict from nltk.
 
-Rhyming is complicated and I haven't quite figured it out yet... :(
-
-But it sort of works.
+Pronunciations use the first pronunciation in cmudict for each word.
 """
 
 import nltk
