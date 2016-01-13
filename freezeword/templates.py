@@ -211,12 +211,16 @@ class Template(object):
                 prev_token = a_or_an.a_or_an(token).title()
             if prev_token == HE_OR_SHE_TOK:
                 prev_token = gender_pronoun.he_or_she(token)
+                token = ""
             if prev_token == HE_OR_SHE_CAP_TOK:
                 prev_token = gender_pronoun.he_or_she(token).title()
+                token = ""
             if prev_token == HIM_OR_HER_TOK:
                 prev_token = gender_pronoun.him_or_her(token)
+                token = ""
             if prev_token == HIM_OR_HER_CAP_TOK:
                 prev_token = gender_pronoun.him_or_her(token).title()
+                token = ""
             if prev_token is not None:
                 return_sentence += prev_token + " "
             prev_token = token

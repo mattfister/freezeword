@@ -25,7 +25,8 @@ fantasy_races = ['elf', 'orc', 'dwarf', 'golem', 'kobold', 'gnome']
 fantasy_occupations = ['traders', 'soldiers', 'miners', 'settlers', 'wizards']
 positive_qualities = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'positiveQualities.txt'))))]
 negative_qualities = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'negativeQualities.txt'))))]
-
+basic_colors = ["black", "gray", "pink", "white", "blue", "green", "purple", "yellow", "brown", "orange", "red"]
+scents = [line.rstrip('\n') for line in open(os.path.join(os.path.dirname(__file__), (os.path.join('words', 'scents.txt'))))]
 
 def get_noun():
     return random.choice(nouns).replace("_", " ")
@@ -93,6 +94,14 @@ def get_ruin_connector():
 
 def get_ruin_connector_adj():
     return random.choice(ruin_connector_adjs)
+
+
+def get_basic_color():
+    return random.choice(basic_colors)
+
+
+def get_scent():
+    return random.choice(scents)
 
 
 def rhyming_adjs(word):

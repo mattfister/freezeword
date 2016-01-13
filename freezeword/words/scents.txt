@@ -1,0 +1,446 @@
+absinthe
+acacia
+acai
+acerola
+acetone
+acid
+acorn
+acrylate
+agarwood
+alcohol
+alfalfa
+algae
+allspice
+almond
+almond
+roasted almond
+amber
+ambergris
+ammonia
+animal
+anise
+apple
+cooked apple
+dried apple
+green apple
+red apple
+apple skin
+apricot
+asparagus
+autumn
+avocado
+bacon
+balsamic
+banana
+banana peel
+ripe banana
+unripe banana
+barley
+roasted barley
+basil
+bay
+green bean
+beef
+beef
+roast beef
+beeswax
+bergamot
+berry
+blackberry
+blueberry
+bouillon
+boysenberry
+brandy
+bread baked
+bread crust
+rye bread
+broccoli
+burnt butter
+rancid butter
+buttermilk
+butterscotch
+buttery	cabbage
+calamus
+camphoreous
+candy
+cantaloupe
+capers
+caramel
+caraway
+cardamom
+carnation
+carrot
+carrot seed
+cashew
+cassia
+castoreum
+cauliflower
+cedar
+cedarwood
+celery
+cereal
+chamomile
+char
+cheese
+chemicals
+cherry
+chestnut
+chicken
+chicken coup
+roasted chicken
+chive
+chocolate
+white chocolate
+chrysanthemum
+cilantro
+cinnamon
+citronella
+citrus peel
+civet
+clam
+cloth
+laundered cloth
+clove
+clover
+cocoa
+coconut
+coffee
+roasted coffee
+cognac
+cologne
+coriander
+corn
+corn chip
+cornmeal
+cornmint
+cotton candy
+coumarinic
+cranberry
+cream
+cucumber
+cucumber skin
+cumin
+currant
+black currant
+currant bud
+black currant
+red currant
+curry
+custard
+cypress
+dairy
+dates
+davana
+deertongue
+dill
+dry	durian
+earth
+egg nog
+egg yolk
+eggs
+elderberry
+elderflower
+eucalyptus
+fat
+feces
+fennel
+fenugreek
+fermentation
+fig
+filbert
+fir needle
+fish
+flesh
+flowers
+foliage
+forest
+fougere
+frankincense
+freesia
+the fresh outdoors
+frying
+fruit
+dried fruit
+fruit
+fudge
+fungus
+gardenia
+garlic
+gasoline
+gas
+geranium
+ginger
+ginseng
+goat
+gooseberry
+graham cracker
+grain
+toasted grain
+grape
+grape skin
+grapefruit
+grass
+gravy
+grease
+grilling
+guava
+ham
+hawthorn
+hay
+hay
+freshly cut hay
+hazelnut
+roasted hazelnut
+herbs
+honey
+honeydew
+honeysuckle
+hops
+horhound
+horseradish
+huckleberry
+humus
+hyacinth
+hyssop
+immortelle
+incense
+jam
+jasmin
+jonquil
+juice
+juniper
+kiwi
+kumquat
+labdanum
+lamb
+lard
+lavender
+lavender
+leather
+leek
+lemon
+lemon peel
+lemongrass
+lettuce
+licorice
+lilac
+lily
+lily of the valley
+lime
+linden flower
+liver
+lobster
+logenberry
+lovage
+lychee
+macadamia
+magnolia
+mahogany
+malt
+mandarin
+mango
+maple
+marigold
+marjoram
+marshmallow
+marzipan
+mastic
+meat
+roasted meaty
+medicine
+melon
+melon rind
+menthol
+metal
+milk
+mimosa
+mint
+molasses
+mold
+moss
+muguet
+mulberry
+mushroom
+musk
+mustard
+must
+mutton
+myrrh
+naphthyl
+narcissus
+nasturtium
+neroli
+nut flesh
+nut skin
+nutmeg
+nut
+oakmoss
+oatmeal
+oats
+ocean
+oily
+onion
+cooked onion
+green onion
+opoponax
+orange
+bitter orange
+orange peel
+orangeflower
+orchid
+origanum
+orris
+osmanthus
+ozone
+paint
+papaya
+paper
+parsley
+passion fruit
+patchouli
+green peas
+peach
+peanut
+peanut butter
+roasted peanut
+pear
+pear skin
+pecan
+pennyroyal
+peony
+pepper
+bell pepper
+peppermint
+balsam	petal
+petitgrain
+petroleum
+phenolic
+pimenta
+pine
+pineapple
+pistachio
+plastic
+plum
+plum skin
+pomegranate
+popcorn
+pork
+potato
+baked potato
+potato chip
+raw potato
+powder
+praline
+privet
+privet blossom
+prune
+pumpkin
+quince
+radish
+rain
+raisin
+raspberry
+raw	reseda
+resin
+rhubarb
+root beer
+root
+rose
+red rose
+rose tea
+white rose
+rosemary
+rubber
+rum
+saffron
+sage
+clary sage
+salmon
+salt
+sandalwood
+sand
+sap
+sarsaparilla
+sassafrass
+sausage
+smoked sausage
+sawdust
+seafood
+seashore
+seaweed
+seed
+sesame
+sharp
+shellfish
+shrimp
+skunk
+smoke
+soap
+solvent
+soup
+spearmint
+spice
+spinach
+spruce
+starch
+starfruit
+storax
+strawberry
+stringent
+styrene
+sugar
+brown sugar
+burnt sugar
+sulfur
+sweat
+sweet pea
+taco
+tagette
+tallow
+tamarind
+tangerine
+tansy
+tarragon
+tea
+black tea
+green tea
+tequila
+thyme
+toast
+tobacco
+toffee
+tolu
+tomato
+tomato leaf
+truffle
+tuberose
+turmeric
+turni
+umami
+urine
+valerian root
+vanilla
+vegetables
+verbena
+vetiver
+vinegar
+violet
+violet leaf
+walnut
+wasabi
+watercress
+watermelon
+water
+wax
+weed
+whiskey
+wine
+wintergreen
+wood
+oak wood
+old wood
+wormwood
+yeast
+ylang
+yuzu
+zedoary
