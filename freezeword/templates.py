@@ -9,6 +9,7 @@ import re
 import ast
 import random
 from freezeword import a_or_an
+from freezeword import gender_pronoun
 
 __author__ = "Matt Fister"
 
@@ -26,7 +27,11 @@ TOK_REGEX = re.compile(r"(%s.*?%s)" % (
 WHITESPACE = re.compile('\s+')
 
 A_OR_AN_TOK = "a_or_an"
-A_OR_AN_CAP_TOKEN = "A_or_an"
+A_OR_AN_CAP_TOK = "A_or_an"
+HE_OR_SHE_TOK = 'he_or_she'
+HE_OR_SHE_CAP_TOK = 'He_or_she'
+HIM_OR_HER_TOK = 'him_or_her'
+HIM_OR_HER_CAP_TOK = 'Him_or_her'
 
 class TemplateError(Exception):
     pass
@@ -202,8 +207,16 @@ class Template(object):
         for token in tokens:
             if prev_token == A_OR_AN_TOK:
                 prev_token = a_or_an.a_or_an(token)
-            if prev_token == A_OR_AN_CAP_TOKEN:
+            if prev_token == A_OR_AN_CAP_TOK:
                 prev_token = a_or_an.a_or_an(token).title()
+            if prev_token == HE_OR_SHE_TOK:
+                prev_token = gender_pronoun.he_or_she(token)
+            if prev_token == HE_OR_SHE_CAP_TOK:
+                prev_token = gender_pronoun.he_or_she(token).title()
+            if prev_token == HIM_OR_HER_TOK:
+                prev_token = gender_pronoun.him_or_her(token)
+            if prev_token == HIM_OR_HER_CAP_TOK:
+                prev_token = gender_pronoun.him_or_her(token).title()
             if prev_token is not None:
                 return_sentence += prev_token + " "
             prev_token = token
