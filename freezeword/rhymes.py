@@ -13,6 +13,7 @@ def rhyme(inp):
     entries = nltk.corpus.cmudict.entries()
     syllables = [(word, syl) for word, syl in entries if word == inp]
     stress_index = 0
+    print(syllables)
     for i, syllable in enumerate(syllables[0][1]):
         if '1' in syllable:
             stress_index = len(syllables[0][1])-i
