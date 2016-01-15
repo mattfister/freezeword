@@ -87,13 +87,28 @@ def end_paragraph():
 def end_chapter():
     out_file.write('\n\n')
 
+
 def phrase_as_link(phrase):
     ret_phrase = "["+phrase+"]"+"(#"+phrase.replace(" ", "-")+")"
     return ret_phrase
 
+
 def phrase_with_anchor(phrase):
     ret_phrase = '<a name="' + phrase.replace(" ", "-") + '"></a>'+phrase
     return ret_phrase
+
+
+def insert_image(image_rel_path, alt_text):
+    print('![' + alt_text + '](' + image_rel_path + ')')
+    print("\n")
+    try:
+        out_file.write("\n")
+        out_file.write('![''](' + image_rel_path + ')')
+        out_file.write("\n")
+        out_file.write("\n")
+        out_file.write("\n")
+    except UnicodeEncodeError:
+        pass
 
 # To add css call like css='https://mattfister.github.io/nanogenmo2015/samples/base.css'
 def end_novel(css=None):
@@ -103,3 +118,5 @@ def end_novel(css=None):
     else:
         pypandoc.convert(md_file_path, 'html', outputfile=html_file_path, extra_args=['-s', '-c', css])
     print('Total words: ' + str(word_count))
+
+
