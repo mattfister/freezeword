@@ -100,13 +100,8 @@ def phrase_with_anchor(phrase):
 
 def insert_image(image_rel_path, alt_text):
     print('![' + alt_text + '](' + image_rel_path + ')')
-    print("\n")
     try:
-        out_file.write("\n")
-        out_file.write('![''](' + image_rel_path + ')')
-        out_file.write("\n")
-        out_file.write("\n")
-        out_file.write("\n")
+        out_file.write('![''](' + image_rel_path + ')\n\n')
     except UnicodeEncodeError:
         pass
 

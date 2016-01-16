@@ -9,11 +9,23 @@ import nltk
 __author__ = "Matt Fister"
 
 
+def memoize(f):
+    memo = {}
+    def helper(x):
+        if x not in memo:
+            memo[x] = f(x)
+        return memo[x]
+    return helper
+
+
+@memoize
 def rhyme(inp):
     entries = nltk.corpus.cmudict.entries()
     syllables = [(word, syl) for word, syl in entries if word == inp]
     stress_index = 0
     print(syllables)
+    if len(syllables) == 0:
+        return {}
     for i, syllable in enumerate(syllables[0][1]):
         if '1' in syllable:
             stress_index = len(syllables[0][1])-i
