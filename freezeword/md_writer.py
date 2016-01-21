@@ -20,6 +20,21 @@ out_file = open(md_file_path, 'w')
 word_count = 0
 
 
+def new_file(new_name):
+    global name
+    global html_name
+    global md_file_path
+    global html_file_path
+    global out_file
+    out_file.close()
+    name = new_name
+    md_name = name + '.md'
+    html_name = name + '.html'
+    md_file_path = os.path.join('output', md_name)
+    html_file_path = os.path.join('output', html_name)
+    out_file = open(md_file_path, 'w')
+
+
 def print_title(s):
     print('%'+s+'\n')
     global word_count
@@ -88,8 +103,12 @@ def end_chapter():
     out_file.write('\n\n')
 
 
-def phrase_as_link(phrase):
+def phrase_as_anchor_link(phrase):
     ret_phrase = "["+phrase+"]"+"(#"+phrase.replace(" ", "-")+")"
+    return ret_phrase
+
+def phrase_with_link(phrase, link):
+    ret_phrase = "["+phrase+"]("+link+")"
     return ret_phrase
 
 
