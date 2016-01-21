@@ -64,7 +64,6 @@ def write_out_list_and_collect(list, shuffle):
                 list_phrase = number + " " + name + " and "
             else:
                 list_phrase += number + " " + name
-
     else:
         for i, (key, value) in enumerate(collected.items()):
             if value > 1:
