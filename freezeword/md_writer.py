@@ -13,9 +13,11 @@ __author__ = "Matt Fister"
 name = 'out'
 md_name = name + '.md'
 html_name = name + '.html'
-md_file_path = os.path.join('output', md_name)
-html_file_path = os.path.join('output', html_name)
+output_folder = 'v2'
+md_file_path = os.path.join(output_folder, md_name)
+html_file_path = os.path.join(output_folder, html_name)
 out_file = open(md_file_path, 'w')
+
 
 word_count = 0
 
@@ -30,8 +32,8 @@ def new_file(new_name):
     name = new_name
     md_name = name + '.md'
     html_name = name + '.html'
-    md_file_path = os.path.join('output', md_name)
-    html_file_path = os.path.join('output', html_name)
+    md_file_path = os.path.join(output_folder, md_name)
+    html_file_path = os.path.join(output_folder, html_name)
     out_file = open(md_file_path, 'w')
 
 
